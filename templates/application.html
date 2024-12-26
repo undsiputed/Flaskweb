@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tech Job Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <div class="form-container">
+        <h1>Apply for {{ job['title'] }}</h1>
+        <form action="/submit-application" method="POST">
+            <input type="hidden" name="job_id" value="{{ job['id'] }}">
+
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Education -->
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" rows="3" placeholder="List your degrees, certifications, and institutions" required></textarea>
+            </div>
+
+            <!-- Experience -->
+            <div class="form-group">
+                <label for="experience">Work Experience:</label>
+                <textarea id="experience" name="experience" rows="3" placeholder="Describe your relevant work experience" required></textarea>
+            </div>
+
+            <!-- Internships -->
+            <div class="form-group">
+                <label for="internships">Internships:</label>
+                <textarea id="internships" name="internships" rows="3" placeholder="List any internships or apprenticeships"></textarea>
+            </div>
+
+            <!-- Skills -->
+            <div class="form-group">
+                <label for="skills">Technical Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="E.g., Python, React, AWS, Docker" required>
+            </div>
+
+            <!-- Projects -->
+            <div class="form-group">
+                <label for="projects">Key Projects:</label>
+                <textarea id="projects" name="projects" rows="3" placeholder="Describe your major technical projects" required></textarea>
+            </div>
+
+            <!-- Motivation -->
+            <div class="form-group">
+                <label for="why_big_tech">Why do you want to work in this role ?</label>
+                <textarea id="why_big_tech" name="why_big_tech" rows="4" placeholder="Explain why you're passionate about working for a company like Amazon, Google, etc." required></textarea>
+            </div>
+
+            <!-- Leadership Experience -->
+            <div class="form-group">
+                <label for="leadership">Leadership Experience:</label>
+                <textarea id="leadership" name="leadership" rows="3" placeholder="Describe any leadership roles you've held"></textarea>
+            </div>
+
+            <!-- Certifications -->
+            <div class="form-group">
+                <label for="certifications">Certifications:</label>
+                <input type="text" id="certifications" name="certifications" placeholder="E.g., AWS Certified Developer, Microsoft Azure Fundamentals">
+            </div>
+
+            <!-- Amazon-Specific Section -->
+            <div class="form-group">
+                <label for="_principles">Which s Leadership Principle resonates with you most and why?</label>
+                <textarea id="amazon_principles" name="_principles" rows="4" placeholder="Explain your favorite  principle and give an example" required></textarea>
+            </div>
+
+            <!-- Preferred Role -->
+            <div class="form-group">
+                <label for="preferred_role">Preferred Role/Team:</label>
+                <input type="text" id="preferred_role" name="preferred_role" placeholder="E.g., Backend Developer, Data Scientist, etc.">
+            </div>
+
+            <!-- Availability -->
+            <div class="form-group">
+                <label for="availability">Availability:</label>
+                <select id="availability" name="availability" required>
+                    <option value="">-- Select --</option>
+                    <option value="immediate">Immediate</option>
+                    <option value="2_weeks">2 Weeks</option>
+                    <option value="1_month">1 Month</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- References -->
+            <div class="form-group">
+                <label for="references">References (Optional):</label>
+                <textarea id="references" name="references" rows="3" placeholder="Provide references with their contact information"></textarea>
+            </div>
+
+            <!-- Cover Letter -->
+            <div class="form-group">
+                <label for="cover_letter">Cover Letter:</label>
+                <textarea id="cover_letter" name="cover_letter" rows="4" placeholder="Write a brief cover letter"></textarea>
+            </div>
+
+             <!-- Resume Upload -->
+            <div class="form-group">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- LinkedIn URL -->
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile URL:</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-profile">
+            </div>
+
+            <!-- GitHub URL -->
+            <div class="form-group">
+                <label for="github">GitHub URL:</label>
+                <input type="url" id="github" name="github" placeholder="https://github.com/your-username">
+            </div>
+
+            <!-- Portfolio URL -->
+            <div class="form-group">
+                <label for="portfolio">Portfolio URL:</label>
+                <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+            </div>
+
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: #fff;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #4e54c8;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2575fc;
+  display: block;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #f7f7f7;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus,
+input[type="file"]:focus {
+  border-color: #ff758c;
+  outline: none;
+  box-shadow: 0 0 10px #ff758c;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff758c, #ff5467);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Add some spacing for the titles and group alignment */
+label::after {
+  content: " *";
+  color: #ff5467;
+}
+
+/* Styling the form layout for better alignment */
+.form-container form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Specific styles for new fields */
+input[type="url"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: #f7f7f7;
+}
+
+input[type="url"]:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 10px #2575fc;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+input[type="file"]::file-selector-button {
+  background: #2575fc;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #6a11cb;
+}
+
+@media (min-width: 768px) {
+  .form-container form {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .form-group.full-width {
+      grid-column: span 2;
+  }
+
+  button {
+      grid-column: span 2;
+  }
+}
